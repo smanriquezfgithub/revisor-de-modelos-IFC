@@ -19,8 +19,8 @@ export const Header = () => {
           <Title order={4}>Revisor de Modelos IFC</Title>
         </Group>
       </UnstyledButton>
-      <UnstyledButton onClick={() => i18n.changeLanguage(i18n.resolvedLanguage === 'es' ? 'es' : 'en')} mr='md'>
-        {i18n.resolvedLanguage === 'es' ? 'ES' : 'EN'}
+      <UnstyledButton onClick={() => i18n.changeLanguage(i18n.resolvedLanguage === 'es' ? 'es' : 'es')} mr='md'>
+        {i18n.resolvedLanguage === 'es' ? 'ES' : 'ES'}
       </UnstyledButton>
     </Group>
   )
