@@ -16,11 +16,11 @@ export const Header = () => {
       <UnstyledButton onClick={() => navigate('/')}>
         <Group pt={8}>
           <img src={oscLogo} alt={'opensource.construction'} style={{ maxHeight: imageHeight }} />
-          <Title order={4}>IFC Model Checker</Title>
+          <Title order={4}>Revisor de Modelos IFC</Title>
         </Group>
       </UnstyledButton>
-      <UnstyledButton onClick={() => i18n.changeLanguage(i18n.resolvedLanguage === 'en' ? 'de' : 'en')} mr='md'>
-        {i18n.resolvedLanguage === 'en' ? 'DE' : 'EN'}
+      <UnstyledButton onClick={() => i18n.changeLanguage(i18n.resolvedLanguage === 'es' ? 'es' : 'en')} mr='md'>
+        {i18n.resolvedLanguage === 'es' ? 'ES' : 'EN'}
       </UnstyledButton>
     </Group>
   )
