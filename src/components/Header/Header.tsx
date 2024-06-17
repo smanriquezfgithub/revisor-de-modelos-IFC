@@ -16,7 +16,7 @@ export const Header = () => {
       <UnstyledButton onClick={() => navigate('/')}>
         <Group pt={8}>
           <img src={oscLogo} alt={'opensource.construction'} style={{ maxHeight: imageHeight }} />
-          <Title order={4}>Revisor de Modelos IFC</Title>
+          <Title order={4}>Revisor de Datos IFC open Source</Title>
         </Group>
       </UnstyledButton>
       <UnstyledButton onClick={() => i18n.changeLanguage(i18n.resolvedLanguage === 'es' ? 'es' : 'es')} mr='md'>
