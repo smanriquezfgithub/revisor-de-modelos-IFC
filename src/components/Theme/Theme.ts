@@ -22,7 +22,7 @@ export const theme = createTheme({
     xxl: '120em',
   },
   defaultRadius: '0',
-  primaryColor: '#ECAF18',
+  primaryColor: 'yellow',
   primaryShade: 6,
   colors: {
     yellow: [
