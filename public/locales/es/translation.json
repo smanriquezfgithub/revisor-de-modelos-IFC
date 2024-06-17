@@ -1,15 +1,15 @@
 {
-  "upload-file": "Cargar archivo",
+  "upload-file": "Revisa tu archivo IFC",
   "upload-description": {
-    "0": "La calidad del modelo está en el centro de los proyectos BIM exitosos.",
-    "1": "El objetivo de esta herramienta es proporcionar una verificación rápida del estado general de un modelo. Viene con un par de pruebas estándar; si tienen éxito, vale la pena profundizar en el modelo.",
-    "2": "De lo contrario probablemente no.",
-    "3": "Lo diseñamos para ser realmente fácil y seguro.",
-    "4": "Todos los datos permanecen en su máquina local: no se enviarán datos a ninguna parte, todas las comprobaciones se realizan localmente"
+    "0": "La calidad de los modelos BIM es clave para el éxito de los proyectos.",
+    "1": "Esta herramienta verifica rápidamente el estado de un modelo BIM conforme a la norma ISO 16739 (IFC).",
+    "2": "Incluye 15 reglas estándar que, si resultan exitosas, indican que el modelo puede ser utilizado para un análisis más detallado. En caso contrario, se identifican cuales son las Entidades IFC que no cumplen estos requisitos mínimos.",
+    "3": " Diseñada para ser intuitiva y segura,",
+    "4": "la plataforma procesa los datos exclusivamente en su dispositivo, sin enviar información a servidores externos y realizando todas las verificaciones localmente."
   },
   "upload-card": {
-    "title": "Validación de modelos y reglas",
-    "description": "IFC Model Checker señala problemas comunes en archivos .ifc, lo que genera datos de alta calidad en la industria AEC. La verificación de los archivos IFC cargados se realiza completamente en el lado del cliente, no guardamos ningún dato: nada sale de su dispositivo y todo se elimina después de cerrar la sesión.",
+    "title": "Reglas a validar en el modelo BIM",
+    "description": "La plataforma de revisión de Datos IFC, identifica quince (15) problemas habituales en archivos .ifc, contribuyendo a la calidad de datos en la industria AEC. La verificación de los archivos IFC se efectúa íntegramente en el cliente; no almacenamos datos: su información no se transmite fuera de su dispositivo y se elimina al cerrar la sesión.",
     "rules": "Reglas:",
     "info-card": {
       "0": "Validación del nombre del proyecto: garantiza que cada proyecto tenga un nombre válido y significativo.",
