@@ -4,7 +4,7 @@
     "0": "La calidad de los modelos BIM es clave para el éxito de los proyectos.",
     "1": "Esta herramienta verifica rápidamente el estado de un modelo BIM conforme a la norma ISO 16739 (IFC).",
     "2": "Incluye 15 reglas estándar que, si resultan exitosas, indican que el modelo puede ser utilizado para un análisis más detallado. En caso contrario, se identifican cuales son las Entidades IFC que no cumplen estos requisitos mínimos.",
-    "3": " Diseñada para ser intuitiva y segura,la plataforma procesa los datos exclusivamente en su dispositivo, sin enviar información a servidores externos y realizando todas las verificaciones localmente.",
+    "3": " Diseñada para ser intuitiva y segura, la plataforma procesa los datos exclusivamente en su dispositivo, sin enviar información a servidores externos y realizando todas las verificaciones localmente.",
     "4": ""
   },
   "upload-card": {
