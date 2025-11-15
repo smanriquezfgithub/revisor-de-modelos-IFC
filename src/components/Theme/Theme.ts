@@ -5,8 +5,7 @@ export const theme = createTheme({
 
   headings: {
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-    fontWeight: 600,
-    color: '#111827', // ← títulos también con gris-900
+    fontWeight: '600', // 👈 string, no número (para que respete el tipo original)
   },
 
   fontSizes: {
@@ -17,19 +16,55 @@ export const theme = createTheme({
     xl: rem(20),
   },
 
-  // Puedes agregar esta paleta pero no es obligatorio
+  breakpoints: {
+    xs: '36em',
+    sm: '48em',
+    md: '62em',
+    lg: '75em',
+    xl: '88em',
+    xxl: '120em',
+  },
+
+  defaultRadius: '0',
+  primaryColor: 'yellow',
+  primaryShade: 6,
+
   colors: {
-    gray900: [
-      '#f3f4f6',
-      '#e5e7eb',
-      '#d1d5db',
-      '#9ca3af',
-      '#6b7280',
-      '#4b5563',
-      '#374151',
-      '#1f2937',
-      '#111827', // ← este es rgb(17, 24, 39)
-      '#0f172a',
+    yellow: [
+      '#ffffe2',
+      '#fffccc',
+      '#fff89b',
+      '#fff464',
+      '#fff139',
+      '#ffef1d',
+      '#ffee09',
+      '#e3d300',
+      '#c9bb00',
+      '#ada100',
+    ],
+    blue: [
+      '#eaeaff',
+      '#cfd0ff',
+      '#9c9cff',
+      '#6464ff',
+      '#3736fe',
+      '#1b19fe',
+      '#0909ff',
+      '#0000e4',
+      '#0000cc',
+      '#0000b4',
+    ],
+    violet: [
+      '#ffe9ff',
+      '#ffd0ff',
+      '#fc9efc',
+      '#fa6afa',
+      '#f83ef8',
+      '#f824f8',
+      '#f715f7',
+      '#dd06dd',
+      '#c500c5',
+      '#ac00ad',
     ],
   },
 
@@ -38,9 +73,10 @@ export const theme = createTheme({
   },
 
   components: {
+    // Color global de texto: rgb(17, 24, 39) = #111827
     Text: Text.extend({
       defaultProps: {
-        c: '#111827', // ← COLOR GLOBAL DEL TEXTO
+        c: '#111827',
       },
     }),
 
