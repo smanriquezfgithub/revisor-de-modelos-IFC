@@ -1,33 +1,44 @@
-import { AppShell, rem, useMantineTheme, useMatches } from '@mantine/core'
-import { ErrorBoundary, Footer, Header } from '@components'
+import { AppShell, Box, useMantineTheme, useMatches } from '@mantine/core'
+import { ErrorBoundary, Footer } from '@components'
 import { Outlet } from 'react-router-dom'
 
 export const PageLayout = () => {
   const theme = useMantineTheme()
-  const headerHeight = useMatches({
-    base: 40,
-    lg: 60,
-  })
+
+  // Mantiene el padding responsivo que ya usabas
   const padding = useMatches({ base: 'lg', lg: 'xl' })
 
   return (
-    <AppShell header={{ height: { base: 40, lg: 60 } }} padding={padding} withBorder={false}>
-      <AppShell.Header pl={`calc(var(--mantine-spacing-xl))`} bg='yellow'>
-        <ErrorBoundary>
-          <Header />
-        </ErrorBoundary>
-      </AppShell.Header>
-      <AppShell.Main
-        py={`calc(${rem(headerHeight)} + var(--mantine-spacing-${padding}))`}
-        bg={theme.other.backgroundColor}
-      >
+    <AppShell padding={padding} withBorder={false}>
+      {/* Ya no usamos AppShell.Header, así desaparece la barra amarilla */}
+
+      <AppShell.Main bg={theme.other.backgroundColor}>
+        {/* Logo Factor Digital fijo arriba-izquierda */}
+        <Box
+          style={{
+            position: 'fixed',
+            top: 24,
+            left: 32,
+            zIndex: 10,
+          }}
+        >
+          <img
+            src="/factor-digital.png"
+            alt="Factor Digital"
+            style={{ height: 40 }}
+          />
+        </Box>
+
+        {/* Contenido de la página (IFC Validator + tarjeta) */}
         <ErrorBoundary>
           <Outlet />
         </ErrorBoundary>
       </AppShell.Main>
-      <AppShell.Footer bg={theme.other.backgroundColor} px='md' pb='xs'>
+
+      <AppShell.Footer bg={theme.other.backgroundColor} px="md" pb="xs">
         <Footer />
       </AppShell.Footer>
     </AppShell>
   )
 }
+
