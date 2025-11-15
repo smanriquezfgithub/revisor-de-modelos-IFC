@@ -45,6 +45,7 @@ export const UploadCard = () => {
     )
   }
 
+  // Validador para extensión .ifc
   const fileValidator = (file: File) => {
     const validExtension = file.name.endsWith('.ifc')
     if (!validExtension) {
@@ -58,30 +59,22 @@ export const UploadCard = () => {
 
   return (
     <Stack align="center" gap="lg">
-
-      {/* Tarjeta estilo mock IFC Validator */}
+      {/* Tarjeta central tipo IFC Validator */}
       <Stack style={{ width: 340 }}>
         <Paper hide={false}>
           <Stack gap="md">
-
-            {/* Título con (i) */}
+            {/* Título con icono (i) */}
             <UploadCardTitle />
 
-            {/* Dropzone sin borde, sin fondo */}
+            {/* Dropzone sin estilos (sin borde, sin esquinas) */}
             <Dropzone
               onDrop={handleDrop}
               onReject={handleReject}
               maxSize={500 * 1024 ** 2}
               multiple={true}
               validator={fileValidator}
-              styles={{
-                root: {
-                  border: 'none',
-                  backgroundColor: 'transparent',
-                  padding: '24px 0',
-                  boxShadow: 'none',
-                },
-              }}
+              unstyled
+              style={{ padding: '24px 0' }}
             >
               <Group
                 justify="center"
@@ -147,12 +140,13 @@ export const UploadCard = () => {
                 </div>
               ) : null}
 
-              {/* Errores */}
+              {/* Errores de validación */}
               {errors && errors.length > 0 ? (
                 <div style={{ marginTop: 4 }}>
                   {errors.map((error, idx) => (
                     <Text key={idx} size="sm" c="red">
-                      {t('dropzone.error-message')}: {error.file} - {error.message}
+                      {t('dropzone.error-message')}: {error.file} -{' '}
+                      {error.message}
                     </Text>
                   ))}
                 </div>
@@ -160,24 +154,36 @@ export const UploadCard = () => {
             </Dropzone>
 
             {/* Botón Validar */}
-            <Button mt="xs" onClick={handleClick} disabled={!files.length} fullWidth>
+            <Button
+              mt="xs"
+              onClick={handleClick}
+              disabled={!files.length}
+              fullWidth
+            >
               {t('validate')}
             </Button>
-
           </Stack>
         </Paper>
       </Stack>
 
-      {/* Párrafos informativos */}
+      {/* Párrafos descriptivos debajo de la tarjeta */}
       <Stack maw={900} gap="xs" align="center" px="md">
-        <Text size="sm" ta="center">{t('upload-description.0')}</Text>
-        <Text size="sm" ta="center">{t('upload-description.1')}</Text>
-        <Text size="sm" ta="center">{t('upload-description.2')}</Text>
-        <Text size="sm" fw={700} ta="center">{t('upload-description.3')}</Text>
-        <Text size="sm" ta="center">{t('upload-description.4')}</Text>
+        <Text size="sm" ta="center">
+          {t('upload-description.0')}
+        </Text>
+        <Text size="sm" ta="center">
+          {t('upload-description.1')}
+        </Text>
+        <Text size="sm" ta="center">
+          {t('upload-description.2')}
+        </Text>
+        <Text size="sm" fw={700} ta="center">
+          {t('upload-description.3')}
+        </Text>
+        <Text size="sm" ta="center">
+          {t('upload-description.4')}
+        </Text>
       </Stack>
-
     </Stack>
   )
 }
-
