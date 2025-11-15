@@ -25,7 +25,7 @@ export const theme = createTheme({
     xxl: '120em',
   },
 
-  defaultRadius: '20',
+  defaultRadius: '0',
   primaryColor: '0D1B2A',
   primaryShade: 6,
 
