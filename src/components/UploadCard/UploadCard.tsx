@@ -105,14 +105,17 @@ export const UploadCard = () => {
                 </Dropzone.Reject>
 
                 <Dropzone.Idle>
-                  <IconFile3d
+                  <Text
                     style={{
-                      width: rem(72),
-                      height: rem(72),
+                      fontSize: '64px',
+                      lineHeight: 1,
+                      fontWeight: 600,
                       color: 'var(--mantine-color-dark-9)',
+                      userSelect: 'none',
                     }}
-                    stroke={1.5}
-                  />
+                  >
+                    +
+                  </Text>
                 </Dropzone.Idle>
 
                 <Stack maw={260} gap="xs">
