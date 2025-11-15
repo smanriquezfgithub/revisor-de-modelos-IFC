@@ -60,114 +60,107 @@ export const UploadCard = () => {
   return (
     <Stack align="center" gap="lg">
       {/* Tarjeta central tipo mock (Revisa tu archivo IFC + + + Validar) */}
-      <Paper
-        hide={false}
+      <Stack
         style={{
           width: 340,
-          borderRadius: 32,
-          padding: '24px 32px 20px',
-          boxShadow: '0 26px 80px rgba(15, 23, 42, 0.18)',
         }}
       >
-        <Stack gap="md">
-          {/* Título con la (i) – se mantiene igual */}
-          <UploadCardTitle />
+        <Paper hide={false}>
+          <Stack gap="md">
+            {/* Título con la (i) – se mantiene igual */}
+            <UploadCardTitle />
 
-          {/* Dropzone + archivos + errores */}
-          <Dropzone
-            onDrop={handleDrop}
-            onReject={handleReject}
-            maxSize={500 * 1024 ** 2}
-            multiple={true}
-            validator={fileValidator}
-          >
-            <Group
-              justify="center"
-              gap="xl"
-              mih={180}
-              style={{ pointerEvents: 'none' }}
+            {/* Dropzone + archivos + errores */}
+            <Dropzone
+              onDrop={handleDrop}
+              onReject={handleReject}
+              maxSize={500 * 1024 ** 2}
+              multiple={true}
+              validator={fileValidator}
             >
-              <Dropzone.Accept>
-                <IconUpload
-                  style={{
-                    width: rem(64),
-                    height: rem(64),
-                    color: 'var(--mantine-color-blue-6)',
-                  }}
-                  stroke={1.5}
-                />
-              </Dropzone.Accept>
-              <Dropzone.Reject>
-                <IconX
-                  style={{
-                    width: rem(64),
-                    height: rem(64),
-                    color: 'var(--mantine-color-red-6)',
-                  }}
-                  stroke={1.5}
-                />
-              </Dropzone.Reject>
-              <Dropzone.Idle>
-                {/* Ícono grande tipo “+” / archivo 3D */}
-                <IconFile3d
-                  style={{
-                    width: rem(72),
-                    height: rem(72),
-                    color: 'var(--mantine-color-dark-9)',
-                  }}
-                  stroke={1.5}
-                />
-              </Dropzone.Idle>
+              <Group
+                justify="center"
+                gap="xl"
+                mih={180}
+                style={{ pointerEvents: 'none' }}
+              >
+                <Dropzone.Accept>
+                  <IconUpload
+                    style={{
+                      width: rem(64),
+                      height: rem(64),
+                      color: 'var(--mantine-color-blue-6)',
+                    }}
+                    stroke={1.5}
+                  />
+                </Dropzone.Accept>
+                <Dropzone.Reject>
+                  <IconX
+                    style={{
+                      width: rem(64),
+                      height: rem(64),
+                      color: 'var(--mantine-color-red-6)',
+                    }}
+                    stroke={1.5}
+                  />
+                </Dropzone.Reject>
+                <Dropzone.Idle>
+                  {/* Ícono grande tipo “+” / archivo 3D */}
+                  <IconFile3d
+                    style={{
+                      width: rem(72),
+                      height: rem(72),
+                      color: 'var(--mantine-color-dark-9)',
+                    }}
+                    stroke={1.5}
+                  />
+                </Dropzone.Idle>
 
-              <Stack maw={260} gap="xs">
-                <Text
-                  size="sm"
-                  style={{ fontWeight: 600, textTransform: 'uppercase' }}
-                >
-                  {t('dropzone.drag')}
-                </Text>
-                <Text size="sm" c="dimmed" mt={2}>
-                  {t('dropzone.attach')}
-                </Text>
-              </Stack>
-            </Group>
-
-            {/* Lista de archivos seleccionados */}
-            {files?.length ? (
-              <div style={{ marginTop: 8 }}>
-                {files.map((file, index) => (
-                  <Group key={index} gap={6}>
-                    <IconFile3d stroke={0.7} />
-                    <Text size="sm">{file.name}</Text>
-                  </Group>
-                ))}
-              </div>
-            ) : null}
-
-            {/* Errores de validación */}
-            {errors && errors.length > 0 ? (
-              <div style={{ marginTop: 4 }}>
-                {errors.map((error, idx) => (
-                  <Text key={idx} size="sm" c="red">
-                    {t('dropzone.error-message')}: {error.file} -{' '}
-                    {error.message}
+                <Stack maw={260} gap="xs">
+                  <Text
+                    size="sm"
+                    style={{ fontWeight: 600, textTransform: 'uppercase' }}
+                  >
+                    {t('dropzone.drag')}
                   </Text>
-                ))}
-              </div>
-            ) : null}
-          </Dropzone>
+                  <Text size="sm" c="dimmed" mt={2}>
+                    {t('dropzone.attach')}
+                  </Text>
+                </Stack>
+              </Group>
 
-          {/* Botón Validar – mismo comportamiento */}
-          <Button
-            mt="xs"
-            onClick={handleClick}
-            disabled={!files.length}
-            fullWidth
-          >
-            {t('validate')}
-          </Button>
-        </Stack>
-      </Paper>
+              {/* Lista de archivos seleccionados */}
+              {files?.length ? (
+                <div style={{ marginTop: 8 }}>
+                  {files.map((file, index) => (
+                    <Group key={index} gap={6}>
+                      <IconFile3d stroke={0.7} />
+                      <Text size="sm">{file.name}</Text>
+                    </Group>
+                  ))}
+                </div>
+              ) : null}
+
+              {/* Errores de validación */}
+              {errors && errors.length > 0 ? (
+                <div style={{ marginTop: 4 }}>
+                  {errors.map((error, idx) => (
+                    <Text key={idx} size="sm" c="red">
+                      {t('dropzone.error-message')}: {error.file} -{' '}
+                      {error.message}
+                    </Text>
+                  ))}
+                </div>
+              ) : null}
+            </Dropzone>
+
+            {/* Botón Validar – mismo comportamiento */}
+            <Button mt="xs" onClick={handleClick} disabled={!files.length} fullWidth>
+              {t('validate')}
+            </Button>
+          </Stack>
+        </Paper>
+      </Stack>
 
       {/* Párrafos descriptivos debajo de la tarjeta, centrados */}
       <Stack maw={900} gap="xs" align="center" px="md">
@@ -190,3 +183,4 @@ export const UploadCard = () => {
     </Stack>
   )
 }
+
