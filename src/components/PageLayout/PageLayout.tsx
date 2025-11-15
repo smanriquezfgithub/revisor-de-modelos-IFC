@@ -11,23 +11,6 @@ export const PageLayout = () => {
   const padding = useMatches({ base: 'lg', lg: 'xl' })
 
   return (
-    <AppShell header={{ height: { base: 40, lg: 60 } }} padding={padding} withBorder={false}>
-      <AppShell.Header pl={`calc(var(--mantine-spacing-xl))`} bg='yellow'>
-        <ErrorBoundary>
-          <Header />
-        </ErrorBoundary>
-      </AppShell.Header>
-      <AppShell.Main
-        py={`calc(${rem(headerHeight)} + var(--mantine-spacing-${padding}))`}
-        bg={theme.other.backgroundColor}
-      >
-        <ErrorBoundary>
-          <Outlet />
-        </ErrorBoundary>
-      </AppShell.Main>
-      <AppShell.Footer bg={theme.other.backgroundColor} px='md' pb='xs'>
-        <Footer />
-      </AppShell.Footer>
-    </AppShell>
+   
   )
 }
