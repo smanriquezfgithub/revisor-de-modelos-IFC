@@ -1,20 +1,18 @@
 import { AppShell, Box, useMantineTheme, useMatches } from '@mantine/core'
 import { ErrorBoundary, Footer } from '@components'
 import { Outlet } from 'react-router-dom'
-import logoFactorDigital from '@assets/logo-factor-digital.png' // <-- usa la misma ruta que en Header.tsx
+import logoFactorDigital from '../../assets/logo-factor-digital.png' // 👈 ruta relativa correcta
 
 export const PageLayout = () => {
   const theme = useMantineTheme()
-
-  // Mantiene el padding responsivo que ya usabas
   const padding = useMatches({ base: 'lg', lg: 'xl' })
 
   return (
     <AppShell padding={padding} withBorder={false}>
-      {/* Ya no usamos AppShell.Header, así desaparece la barra amarilla */}
+      {/* Sin AppShell.Header: eliminamos la barra amarilla */}
 
       <AppShell.Main bg={theme.other.backgroundColor}>
-        {/* Logo Factor Digital fijo arriba-izquierda */}
+        {/* Logo Factor Digital arriba a la izquierda */}
         <Box
           style={{
             position: 'fixed',
@@ -30,7 +28,7 @@ export const PageLayout = () => {
           />
         </Box>
 
-        {/* Contenido de la página (IFC Validator + tarjeta) */}
+        {/* Contenido de cada página (IFC Validator + tarjeta, etc.) */}
         <ErrorBoundary>
           <Outlet />
         </ErrorBoundary>
@@ -42,4 +40,3 @@ export const PageLayout = () => {
     </AppShell>
   )
 }
-
