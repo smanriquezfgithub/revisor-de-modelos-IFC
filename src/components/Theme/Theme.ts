@@ -5,20 +5,11 @@ export const theme = createTheme({
 
   headings: {
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-    fontWeight: '600',
+    fontWeight: '600', // string, para que TS no pelee
   },
 
-  globalStyles: () => ({
-    body: {
-      color: '#111827', // ← COLOR GLOBAL
-    },
-    '*': {
-      color: '#111827', // ← TODOS LOS ELEMENTOS
-    },
-    p: {
-      color: '#111827',
-    }
-  }),
+  // Color base tipo rgb(17, 24, 39)
+  black: '#111827',
 
   fontSizes: {
     xs: rem(12),
@@ -87,7 +78,7 @@ export const theme = createTheme({
   components: {
     Text: Text.extend({
       defaultProps: {
-        c: '#111827',
+        c: '#111827', // textos de <Text> en el gris-oscuro que quieres
       },
     }),
 
@@ -99,4 +90,5 @@ export const theme = createTheme({
     }),
   },
 })
+
 
