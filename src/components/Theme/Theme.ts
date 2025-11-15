@@ -5,8 +5,20 @@ export const theme = createTheme({
 
   headings: {
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-    fontWeight: '600', // 👈 string, no número (para que respete el tipo original)
+    fontWeight: '600',
   },
+
+  globalStyles: () => ({
+    body: {
+      color: '#111827', // ← COLOR GLOBAL
+    },
+    '*': {
+      color: '#111827', // ← TODOS LOS ELEMENTOS
+    },
+    p: {
+      color: '#111827',
+    }
+  }),
 
   fontSizes: {
     xs: rem(12),
@@ -73,7 +85,6 @@ export const theme = createTheme({
   },
 
   components: {
-    // Color global de texto: rgb(17, 24, 39) = #111827
     Text: Text.extend({
       defaultProps: {
         c: '#111827',
