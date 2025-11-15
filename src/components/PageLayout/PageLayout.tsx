@@ -1,6 +1,7 @@
 import { AppShell, Box, useMantineTheme, useMatches } from '@mantine/core'
 import { ErrorBoundary, Footer } from '@components'
 import { Outlet } from 'react-router-dom'
+import logoFactorDigital from '@assets/logo-factor-digital.png' // <-- usa la misma ruta que en Header.tsx
 
 export const PageLayout = () => {
   const theme = useMantineTheme()
@@ -23,7 +24,7 @@ export const PageLayout = () => {
           }}
         >
           <img
-            src="/factor-digital.png"
+            src={logoFactorDigital}
             alt="Factor Digital"
             style={{ height: 40 }}
           />
