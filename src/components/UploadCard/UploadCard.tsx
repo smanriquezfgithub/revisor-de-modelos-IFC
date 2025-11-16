@@ -158,13 +158,28 @@ export const UploadCard = () => {
 
             {/* Botón Validar */}
             <Button
-              mt="xs"
-              onClick={handleClick}
-              disabled={!files.length}
-              fullWidth
-            >
-              {t('validate')}
-            </Button>
+  mt="xs"
+  onClick={handleClick}
+  disabled={!files.length}
+  fullWidth
+  styles={{
+    root: {
+      backgroundColor: files.length ? '#0D1B2A' : '#e5e7eb', // activo / deshabilitado
+      color: files.length ? '#ffffff' : '#9ca3af',
+      borderRadius: 0,
+      border: 'none',
+      fontWeight: 500,
+      transition: 'background-color 150ms ease',
+
+      '&:hover': files.length
+        ? { backgroundColor: '#0b1623' } // hover más oscuro
+        : { backgroundColor: '#e5e7eb' },
+    },
+  }}
+>
+  {t('validate')}
+</Button>
+
           </Stack>
         </Paper>
       </Stack>
